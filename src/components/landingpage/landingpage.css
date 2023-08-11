@@ -1,0 +1,46 @@
+.navbar{
+    background-color: black;
+    display: flex;
+   
+ }
+h2{
+   
+text-align: left;
+font: normal normal 900 28px/34px Avenir;
+letter-spacing: 0px;
+color: #C4B4F8;
+opacity: 1;
+margin-top: 18px;
+margin-left: 66px;
+width: 73px;
+height: 38px;
+}
+.link1{
+    margin-left: 350px;
+    margin-top: 29px;
+    font: normal normal normal 14px/19px Avenir;
+    opacity: 1;
+}
+.link:hover{
+    color: #C4B4F8;
+}
+.input1{
+display: flex;
+margin-top: 5px;
+margin-left: 300px;
+color:white;
+background: #191919 0% 0% no-repeat padding-box;
+align-self: center;
+width: 350px;
+height: 25px;
+border-radius: 21px;
+border-color: whitesmoke;
+opacity: 1;
+}
+.image1{
+ height: 450px;
+ width:100%;
+}
+
+
+
