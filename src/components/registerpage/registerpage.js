@@ -3,6 +3,8 @@ import './register.css'
 import dark from "../../images/mountain.webp";
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const BACKEND_URL ="http://localhost:4800"
@@ -19,16 +21,21 @@ export default function Registerpage() {
     const [confirmPassword,setConfirmPassword] = useState('')
  
     const Navigate = useNavigate()
+    const notifyError = (errMsg) => toast.error(errMsg);
+    const notifySuccess = (Msg) => toast(Msg);
 
     function validate(){
         if(!name||!email||!phone||!profession||!password||!confirmPassword){
-            return alert('Please fill all fields') 
+             notifyError('Please fill all fields') 
+             return false
         }
        if(password !== confirmPassword){
-        return alert('Confirm password should be same as password')
+         notifyError('Confirm password should be same as password')
+         return false
        }
        if(phone.length !== 10){
-        return alert('Enter phone number with 10 digits')
+         notifyError('Enter phone number with 10 digits')
+         return false
        }
        return true
       
@@ -38,7 +45,7 @@ export default function Registerpage() {
         e.preventDefault()
        if(validate()) {
         try{
-            const response = await axios.post(`${BACKEND_URL}/api/v1/auth/register`,{
+            const result = await axios.post(`${BACKEND_URL}/api/v1/auth/register`,{
                 name,
                 email,
                 phone,
@@ -48,23 +55,19 @@ export default function Registerpage() {
             {
                 headers : {'content-type': 'application/json'}
             })
-           
-            if(response && response.data.success){
-                alert(response.data.message)
+          
+            if(result && result.data.success){
+                notifySuccess(result.data.message)
                 Navigate('/login')
-            }else{
-                alert(response.data.message)
-            } 
+            }
         }
         catch(error){
-            alert('something went wrong')
+          error.response.data.message?  notifyError(error.response.data.message) : notifyError('Something went wrong')
         }
        }
        else{
         return
-       }
-        
-       
+       } 
     }
 
     return <>
@@ -93,6 +96,7 @@ export default function Registerpage() {
                     </div>
                 </form>
             </section>
+            <ToastContainer/>
         </div> 
     </>
 }
