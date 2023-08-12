@@ -62,12 +62,15 @@ export default function Registerpage() {
             }
         }
         catch(error){
+         
           error.response.data.message?  notifyError(error.response.data.message) : notifyError('Something went wrong')
         }
        }
        else{
         return
-       } 
+       }
+        
+       
     }
 
     return <>
