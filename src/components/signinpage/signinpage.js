@@ -3,7 +3,7 @@ import "./signinpage.css"
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useNavigate, useLocation} from "react-router-dom";
-import nature from "../../images/nature1.jpg";
+import dark from "../../images/mountain.webp";
 
 export default function Signinpage(){
     const [email, setEmail] = useState("")
@@ -15,7 +15,7 @@ export default function Signinpage(){
     return<>
   <div className='body'>
   <div className='float row1'>
-        <img className='row1' src={nature} alt='not found'/>
+        <img className='row1' src={dark} alt='not found'/>
         <div className='text '>
         <h1 className='heading1'>Tuner</h1>
       <h1 className='heading2'>Enjoy Multiple videos at one place</h1>

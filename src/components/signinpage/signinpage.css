@@ -1,102 +1,100 @@
-.body{
-   
-     height:95vh;
-    width:100vw;
-   
+.body {
+    height: 95vh;
+    width: 100vw;
     display: flexbox;
 }
-.hover:hover{
-    color:blueviolet;
-    
+
+.hover:hover {
+    color: blueviolet;
 }
-.float{
+
+.float {
     float: left;
 }
-.row1{
-width: 60vw;
-height: 100vh;
 
-
-
+.row1 {
+    width: 60vw;
+    height: 100vh;
 }
 
-.row2{
+.row2 {
     width: 40vw;
     height: 100vh;
     background: #afc3f1f5 0% 0% no-repeat padding-box;
+}
 
-
-    
-    }
-.image2{
+.image2 {
     width: 80%;
-    height:100%;
+    height: 100%;
 
 }
-    .heading1{
-    margin-bottom: 5px;
-width: 313px;
-height: 164px;
-text-align: left;
-font: normal normal 900 120px/146px Avenir;
-letter-spacing: 0px;
-color: #C4B4F8;
-opacity: 1;
-    }
-    .heading2{
-        
-        margin-bottom: 70px;
-        font: normal normal 200 50px/50px Avenir;
-    }
 
-.text{
-    
-        position: absolute;
-        margin-left: 100px;
-   top: 100px;
-    }
-    .form1{
-        margin-left: 100px;
-        width:300px;
-        margin-top: 30px;
-    }
-    .head1{
-        margin-top: 211px;
-margin-left: 120px;
-width: 166px;
-height: 55px;
-text-align: center;
-letter-spacing: 0.41px;
-color: #FFFFFF;
-opacity: 1;
-font: normal normal 200 50px/50px Avenir;
-    }
-    .head3{
+.heading1 {
+    margin-bottom: 5px;
+    width: 313px;
+    height: 164px;
+    text-align: left;
+    font: normal normal 900 120px/146px Avenir;
+    letter-spacing: 0px;
+    color: #C4B4F8;
+    opacity: 1;
+}
+
+.heading2 {
+    color: azure;
+    margin-bottom: 70px;
+    font: normal normal 200 50px/50px Avenir;
+}
+
+.text {
+    position: absolute;
+    margin-left: 100px;
+    top: 100px;
+}
+
+.form1 {
+    margin-left: 100px;
+    width: 300px;
+    margin-top: 30px;
+}
+
+.head1 {
+    margin-top: 211px;
+    margin-left: 120px;
+    width: 166px;
+    height: 55px;
+    text-align: center;
+    letter-spacing: 0.41px;
+    color: #FFFFFF;
+    opacity: 1;
+    font: normal normal 200 50px/50px Avenir;
+}
+
+.head3 {
     width: 288px;
     margin-left: 100px;
-height: 20px;
-text-align: center;
-letter-spacing: 0.34px;
-color: #FFFFFF;
-opacity: 1;
-font: normal normal 100 30px/30px Avenir;
-    }
-    .button1{
-        margin-top: 30px;
-        width:100px;
-        margin-left: 100px;
-        padding:8px ;
-       border-radius: 20px;
-       background-color: #8a69f7;
-     border-color: transparent;
-     cursor: pointer;
-     color: white;
-    }
-    .button1:hover{
-        background-color:rgb(46, 135, 218);
-        transform: scale(1.10);
-        
+    height: 20px;
+    text-align: center;
+    letter-spacing: 0.34px;
+    color: #FFFFFF;
+    opacity: 1;
+    font: normal normal 100 30px/30px Avenir;
 }
 
+.button1 {
+    margin-top: 30px;
+    width: 100px;
+    margin-left: 100px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: #8a69f7;
+    border-color: transparent;
+    cursor: pointer;
+    color: white;
+}
 
-   
+.button1:hover {
+    background-color: rgb(46, 135, 218);
+    transform: scale(1.10);
+
+}
