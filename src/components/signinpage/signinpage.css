@@ -55,12 +55,22 @@
 .form1 {
     margin-left: 100px;
     width: 300px;
-    margin-top: 30px;
+    margin-top: 10px;
+    display: block;
+    width : 300px;
+    height:30px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 3px solid;
+    background-color:#afc3f1f5 ;
 }
 
 .head1 {
-    margin-top: 211px;
-    margin-left: 120px;
+    margin-top: 150px;
+    margin-left: 145px;
+    margin-bottom: 10px;
     width: 166px;
     height: 55px;
     text-align: center;
@@ -71,14 +81,16 @@
 }
 
 .head3 {
-    width: 288px;
-    margin-left: 100px;
+    width: 415px;
+    margin-left: 40px;
+    margin-top: 0px;
     height: 20px;
     text-align: center;
     letter-spacing: 0.34px;
     color: #FFFFFF;
     opacity: 1;
     font: normal normal 100 30px/30px Avenir;
+    font-size: 25px;
 }
 
 .button1 {
@@ -97,4 +109,8 @@
     background-color: rgb(46, 135, 218);
     transform: scale(1.10);
 
+}
+
+form{
+    margin-top: 20px;
 }

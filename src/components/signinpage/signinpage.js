@@ -28,7 +28,7 @@ export default function Signinpage(){
         <h1 className='head1'>Sign in</h1>
         <h3 className='head3'>Sign in to continue access pages</h3>
         <form >
-        <input className='form1' placeholder='Email' type='email'/><br></br>
+        <input className='form1' placeholder='Email' type='email' /><br></br>
         <input className='form1' placeholder='Password' type='password'/><br></br>
         <button className='button1'>Login</button>
         </form>
