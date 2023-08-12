@@ -24,6 +24,7 @@ const handleSubmit=(event)=>{
    
 }
 function signout(){
+    localStorage.removeItem("auth")
 navigate("/")
 }
     
