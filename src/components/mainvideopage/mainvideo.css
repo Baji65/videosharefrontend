@@ -1,0 +1,24 @@
+.link1{
+    margin-left: 200px;
+    margin-top: 29px;
+    font: normal normal normal 14px/19px Avenir;
+    opacity: 1;
+}
+.navbar{
+    background-color: black;
+    display: flex;
+   
+ }
+ .nav1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+ }
+ .nav1:hover{
+    font-size: 20px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+color:rgb(12, 223, 177);
+ }
