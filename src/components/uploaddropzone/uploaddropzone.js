@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useState } from "react";
-// import { useDropzone } from 'react-dropzone'
-// import { toast } from "react-toastify";
+import { useDropzone } from 'react-dropzone'
+import { toast } from "react-toastify";
 import "./upload.css"
 
 
