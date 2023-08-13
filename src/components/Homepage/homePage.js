@@ -2,27 +2,62 @@ import SampleNavbar from "../navbar";
 import KGF from"../../images/KGF.jpg";
 import "../Homepage/homepage.css"
 import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
+const BACKEND_URL="http://localhost:4800"
 
 export default function HomePage(){
 
     const [videos,setVideos]=useState([1,2,3,4,5,6,7,8])
     const [toggle,setToggle]=useState(false)
     const [visible,setVisible] =useState(false)
+    const [userDetails,setUserDetails] = useState('')
 
     const [formData,setFormdata] = useState({
-        
+        name: "",
+        video: null,
+        description: "",
+        category: "",
+        visibility: "",
+        duration: "",
+        views: 200,
     })
 
+    const submitForm = async (e) => {
+    e.preventDefault();
+  
+    const userId = userDetails.userId;
+    const videoData = new FormData();
+    videoData.append("title", formData.name);
+    videoData.append("video", formData.video);
+    videoData.append("category", formData.category);
+    videoData.append("description", formData.description);
+    videoData.append("duration", formData.duration);
+    videoData.append("views", formData.views);
+    videoData.append("visibility", formData.visibility);
+
+    try{
+       const result = await axios.post(`${BACKEND_URL}/create/${userId}`)
+       if(result && result.status){
+        alert("File uploaded successfully")
+        setVisible(false)
+       }
+    }
+    catch(error){
+        alert(error)
+    }
+    }
     function uploadClicked(){
         setVisible(!visible)
     }
 
-  
+    useEffect(()=>{
+         const details = JSON.parse(localStorage.getItem("auth"))
+         setUserDetails(details)
+    },[])
+   
 
-    // useEffect(async()=>{
-    //     await axios.post('')
-    // },[videos])
+
     return <>
     
     <div className="home-container">
@@ -54,39 +89,45 @@ export default function HomePage(){
             </div>
         </section>
 
-        <form method="POST" action='#' className={visible?'visible ': "hide"} onSubmit={e=>e.preventDefault()}>
+        <form method="POST" action='#' className={visible?'visible ': "hide"} onSubmit={submitForm}>
             <section className="upload-nav  ">
                 <span className="label-lrg-font">Upload New Video</span>
                 <button onClick={(visible)=>setVisible(!visible)} type='button'>X</button>
             </section>
+
             <section className="box-class flex-items">
-                <input id='uploaded-video' type='file'  />
+                <input id='uploaded-video' type='file' 
+                onChange={e =>setFormdata({...formData,video : e.target.files[0]})} />
             </section>
+
             <section className="box-class">
                 <label className="label label-lrg-font" htmlFor='name'>Name</label>
-                <input className="inp-section" id='name' type='text'/>
+                <input className="inp-section" id='name' type='text'
+                onChange={e =>setFormdata({...formData,name : e.target.value})} value={formData.name} />
             </section>
            
             <section className="box-class">
                 <label className='label label-sm-font' htmlFor="description">Description</label>
-                <input className="inp-section" id='description' type='text' />
+                <input className="inp-section" id='description' type='text' 
+                onChange={e=>setFormdata({...formData,description:e.target.value})} value={formData.description} />
             </section>
            
             <div className="box-class upload-nav list">
                 <section>
                     <label className="label label-sm-font" htmlFor="category">Category</label>
-                    <select id="category"><option>category</option></select>
+                    <select id="category" onChange={e=>setFormdata({...formData,category : e.target.value})} ><option>category</option></select>
                 </section>
                 <section>
                 <label className="label label-sm-font" htmlFor="visibility">Visibility</label>
-                    <select id="visibility">
+                    <select id="visibility" 
+                    onChange={e=>setFormdata({...formData,visibility : e.target.value})} >
                         <option>Public</option>
                         <option>Private</option>
                     </select>
                 </section>
                 <section>
                     <label className="label label-sm-font" htmlFor="other">Other</label>
-                    <select id="other">
+                    <select id="other" onChange={e=>setFormdata({...formData,other : e.target.value})} >
                         <option>other</option>
                     </select>
                 </section>
