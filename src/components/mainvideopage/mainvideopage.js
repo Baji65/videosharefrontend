@@ -4,12 +4,16 @@ import { Landingpage } from '../landingpage/landingpage';
 import "./mainvideo.css";
 import KGF from "../../images/KGF.jpg";
 import { Upload } from '../uploaddropzone/uploaddropzone';
+import { useContext } from 'react';
+
 
 
 
 export function Main() {
     const [visible, setvisible] = useState(false)
     const navigate = useNavigate();
+
+    
 
     const [form, setFormdata] = useState({
         name: "",

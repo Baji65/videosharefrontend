@@ -33,11 +33,11 @@ export default  function Signinpage() {
         {
           headers: { 'content-type': 'application/json' }
         })
-        console.log(result)
+        
         if(result && result.data.success){
           localStorage.setItem("auth",JSON.stringify(result.data.data))
           notifySuccess(result.data.message)
-          Navigate('/main')
+          Navigate('/')
       }
 
     }

@@ -39,6 +39,10 @@
     color: azure;
 }
 
+.md-width{
+    width: 300px;
+}
+
 .log-reg-container .span:hover{
     color:rgb(143, 201, 109);
     cursor:pointer;
