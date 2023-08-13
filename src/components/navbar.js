@@ -5,7 +5,7 @@ import {  useEffect, useState } from "react"
 
 
 
-export default function SampleNavbar() {
+export default function SampleNavbar({uploadClicked}) {
     const navigate = useNavigate()
     
     const [navToggle, setNavtoggle] = useState(false)
@@ -23,6 +23,7 @@ export default function SampleNavbar() {
     }
 
     function onUploadClicked(){
+        uploadClicked()
         // navigate('/uploads')
     }
     function onSignOutClicked(){
@@ -56,7 +57,7 @@ export default function SampleNavbar() {
                     <div className='log-reg-container md-width'>
                         <span onClick={onMyVideoClicked} className='span'>MyVideos</span>
                         <span>|</span>
-                        <span onClick={onUploadClicked} className='span'>Upload</span>
+                        <span onClick={uploadClicked} className='span'>Upload</span>
                         <span>|</span>
                         <span onClick={onSignOutClicked} className='span'>sign Out</span>
                     </div>
