@@ -96,10 +96,7 @@ export default function HomePage(){
             <section className="form-btn-container">
                 <button type='submit'>Upload</button>
             </section>
-
-        
         </form>
-
     </div>
    
     </>

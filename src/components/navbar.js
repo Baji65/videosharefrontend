@@ -22,10 +22,7 @@ export default function SampleNavbar({uploadClicked}) {
         navigate('/myvideos')
     }
 
-    function onUploadClicked(){
-        uploadClicked()
-        // navigate('/uploads')
-    }
+    
     function onSignOutClicked(){
         localStorage.removeItem('auth')
         setNavtoggle(!navToggle)

@@ -22,7 +22,7 @@ export default function Registerpage() {
  
     const Navigate = useNavigate()
     const notifyError = (errMsg) => toast.error(errMsg);
-    const notifySuccess = (Msg) => toast(Msg);
+    const notifySuccess = (Msg) => toast.success(Msg);
 
     function validate(){
         if(!name||!email||!phone||!profession||!password||!confirmPassword){
@@ -57,7 +57,8 @@ export default function Registerpage() {
             })
           
             if(result && result.data.success){
-                notifySuccess(result.data.message)
+                notifySuccess("Registerd Succesfully")
+                alert(result.data.message)
                 Navigate('/login')
             }
         }

@@ -14,7 +14,7 @@ export default  function Signinpage() {
   const Navigate = useNavigate();
   const location = useLocation();
   const notifyError= (msg) => toast.error(msg)
-  const notifySuccess = (msg=> toast(msg))
+  const notifySuccess = (msg)=> toast.success(msg)
 
 
 
