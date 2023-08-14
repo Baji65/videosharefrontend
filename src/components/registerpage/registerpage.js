@@ -45,7 +45,7 @@ export default function Registerpage() {
         e.preventDefault()
        if(validate()) {
         try{
-            const result = await axios.post(`${BACKEND_URL}/api/v1/auth/register`,{
+            const result = await axios.post(`${BACKEND_URL}/auth/register`,{
                 name,
                 email,
                 phone,
