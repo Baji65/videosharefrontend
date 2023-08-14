@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./signinpage.css"
 import { NavLink } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -16,7 +16,10 @@ export default  function Signinpage() {
   const notifyError= (msg) => toast.error(msg)
   const notifySuccess = (msg)=> toast.success(msg)
 
-
+useEffect(()=>{
+  const token = localStorage.getItem("auth")
+  if(token){Navigate('/')}
+},[])
 
  async function handleLoginSubmit(e) {
     e.preventDefault()
