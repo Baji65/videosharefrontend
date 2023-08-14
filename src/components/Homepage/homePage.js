@@ -52,7 +52,15 @@ export default function HomePage(){
    )
 
        if(result && result.status){
-        // alert("File uploaded successfully")
+        setFormdata({
+            name: "",
+            video: null,
+            description: "",
+            category: "category",
+            visibility: "Public",
+            duration: "",
+            views: 200,
+        })
         setVisible(false)
        }
     }
