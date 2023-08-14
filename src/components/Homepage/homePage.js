@@ -42,7 +42,7 @@ export default function HomePage(){
        const result = await toast.promise(  axios.post(`${BACKEND_URL}/create/${userDetails.userId}`,videoData,
        {headers:  { "Content-Type": "multipart/form-data", "authorization" : userDetails.token }})   ,
        {
-         pending: 'Loading...',
+         pending: 'Uploading...',
          success: 'Uploaded Succesfully 👌',
          error: 'Upload Failed 🤯'
        },
