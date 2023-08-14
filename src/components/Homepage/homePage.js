@@ -3,6 +3,8 @@ import KGF from"../../images/KGF.jpg";
 import "../Homepage/homepage.css"
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+  import "react-toastify/dist/ReactToastify.css";
 
 const BACKEND_URL="http://localhost:4800"
 
@@ -12,13 +14,12 @@ export default function HomePage(){
     const [toggle,setToggle]=useState(false)
     const [visible,setVisible] =useState(false)
     const [userDetails,setUserDetails] = useState('')
-
     const [formData,setFormdata] = useState({
         name: "",
         video: null,
         description: "",
-        category: "",
-        visibility: "",
+        category: "category",
+        visibility: "Public",
         duration: "",
         views: 200,
     })
@@ -26,7 +27,7 @@ export default function HomePage(){
     const submitForm = async (e) => {
     e.preventDefault();
   
-    const userId = userDetails.userId;
+    
     const videoData = new FormData();
     videoData.append("title", formData.name);
     videoData.append("video", formData.video);
@@ -36,16 +37,29 @@ export default function HomePage(){
     videoData.append("views", formData.views);
     videoData.append("visibility", formData.visibility);
 
+    console.log(formData.video)
     try{
-       const result = await axios.post(`${BACKEND_URL}/create/${userId}`)
+       const result = await toast.promise(  axios.post(`${BACKEND_URL}/create/${userDetails.userId}`,videoData,
+       {headers:  { "Content-Type": "multipart/form-data", "authorization" : userDetails.token }})   ,
+       {
+         pending: 'Loading...',
+         success: 'Uploaded Succesfully 👌',
+         error: 'Upload Failed 🤯'
+       },
+       {
+        position: toast.POSITION.TOP_CENTER
+      }
+   )
+
        if(result && result.status){
-        alert("File uploaded successfully")
+        // alert("File uploaded successfully")
         setVisible(false)
        }
     }
     catch(error){
-        alert(error)
+       alert(error)
     }
+    
     }
     function uploadClicked(){
         setVisible(!visible)
@@ -56,7 +70,7 @@ export default function HomePage(){
          setUserDetails(details)
     },[])
    
-
+    
 
     return <>
     
@@ -115,12 +129,14 @@ export default function HomePage(){
             <div className="box-class upload-nav list">
                 <section>
                     <label className="label label-sm-font" htmlFor="category">Category</label>
-                    <select id="category" onChange={e=>setFormdata({...formData,category : e.target.value})} ><option>category</option></select>
+                    <select id="category" onChange={e=>setFormdata({...formData,category : e.target.value})}
+                    value={formData.category} ><option>category</option></select>
                 </section>
                 <section>
                 <label className="label label-sm-font" htmlFor="visibility">Visibility</label>
                     <select id="visibility" 
-                    onChange={e=>setFormdata({...formData,visibility : e.target.value})} >
+                    onChange={e=>setFormdata({...formData,visibility : e.target.value})}
+                    value={formData.visibility} >
                         <option>Public</option>
                         <option>Private</option>
                     </select>
@@ -138,6 +154,7 @@ export default function HomePage(){
                 <button type='submit'>Upload</button>
             </section>
         </form>
+        <ToastContainer/>
     </div>
    
     </>
