@@ -52,11 +52,11 @@ export default function SampleNavbar({uploadClicked}) {
                     <span className='tuner-field'>Tuner</span>
                     <input className='search-bar' type='search' placeholder='Search'></input>
                     <div className='log-reg-container md-width'>
-                        <span onClick={onMyVideoClicked} className='span'>MyVideos</span>
+                        <span onClick={onMyVideoClicked} className='span'>My videos</span>
                         <span>|</span>
                         <span onClick={uploadClicked} className='span'>Upload</span>
                         <span>|</span>
-                        <span onClick={onSignOutClicked} className='span'>sign Out</span>
+                        <span onClick={onSignOutClicked} className='span'>Sign out</span>
                     </div>
 
                 </nav>

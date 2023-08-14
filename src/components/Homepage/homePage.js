@@ -10,7 +10,7 @@ const BACKEND_URL="http://localhost:4800"
 
 export default function HomePage(){
 
-    const [videos,setVideos]=useState([1,2,3,4,5,6,7,8])
+    const [videos,setVideos]=useState([])
     const [toggle,setToggle]=useState(false)
     const [visible,setVisible] =useState(false)
     const [userDetails,setUserDetails] = useState('')
@@ -24,10 +24,15 @@ export default function HomePage(){
         views: 200,
     })
 
+    useEffect(()=>{
+        axios.get(`${BACKEND_URL}/video`)
+            .then((result)=>{setVideos(result.data)})
+        
+    },[])
+
     const submitForm = async (e) => {
     e.preventDefault();
-  
-    
+   
     const videoData = new FormData();
     videoData.append("title", formData.name);
     videoData.append("video", formData.video);
@@ -86,7 +91,7 @@ export default function HomePage(){
         <section>
             <SampleNavbar uploadClicked={uploadClicked}/>
         </section>
-        <section className='img-video-continer'>
+       <section className='img-video-continer'>
             <img className={!toggle ? "main-img" :"main-img-toggle"} src={KGF}/>
             <div className="video-section" >
                 <section className="view-more-container">
@@ -95,14 +100,14 @@ export default function HomePage(){
                 </section>
                 <section className="video-list">
                     {videos && !toggle ? videos.slice(0,4).map((item)=>{
-                        return <li className="video-clip">
-                           {item}
+                        return <li key={item._id} className="video-clip">
+                           <video className="thumbnail" src={item.video} value={item._id}  />
                         </li>
                     }) :
 
                     videos.slice(0,16).map((item)=>{
-                        return <li className="video-clip">
-                           {item}
+                        return <li key={item._id} className="video-clip">
+                        <video className="thumbnail" src={item.video} />   
                         </li>
                     })
 
