@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ChevronsLeft, ChevronsRight } from "react-feather";
-import moneyHeist from '../../assets/moneyHeist.jpg';
-import strangerThings from '../../assets/strangerThings.jpg';
-import kyloRen from '../../assets/kyloRen.jpg';
-import justiceLeague from '../../assets/justiceLeague.jpg';
+import KGF from '../../assets/kgf.avif';
+import padmavati from '../../assets/padmavati.jpg';
+import Rockstar from '../../assets/rockstar.jpg';
+import Talvar from '../../assets/talvar.webp';
 import avengers from '../../assets/avengers.jpg'
 
 
@@ -19,11 +19,13 @@ const HomeCarousel = () => {
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
   const slides = [
-    strangerThings,
-    moneyHeist,
-    kyloRen,
-    justiceLeague,
+    Rockstar,
+    KGF,
+    
+    padmavati,
+   
     avengers,
+    Talvar,
   ];
 
   useEffect(() => {
