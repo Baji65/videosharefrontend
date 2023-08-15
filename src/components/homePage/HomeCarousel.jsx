@@ -22,7 +22,6 @@ const HomeCarousel = () => {
     bahubali,
     KGF,
     padmavati,
-   
     drishyam,
     darbar,
   ];
