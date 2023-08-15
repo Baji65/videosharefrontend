@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ChevronsLeft, ChevronsRight } from "react-feather";
 import KGF from '../../assets/kgf.avif';
 import padmavati from '../../assets/padmavati.jpg';
-import Rockstar from '../../assets/rockstar.jpg';
-import Talvar from '../../assets/talvar.webp';
+// import bahubali from '../../assets/bahubali.webp';
+// import Talvar from '../../assets/talvar.webp';
 import avengers from '../../assets/avengers.jpg'
 
 
@@ -19,13 +19,12 @@ const HomeCarousel = () => {
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
   const slides = [
-    Rockstar,
+    bahubali,
     KGF,
-    
     padmavati,
    
     avengers,
-    Talvar,
+    // Talvar,
   ];
 
   useEffect(() => {
