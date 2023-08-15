@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronsLeft, ChevronsRight } from "react-feather";
 import KGF from '../../assets/kgf.avif';
 import padmavati from '../../assets/padmavati.jpg';
-// import bahubali from '../../assets/bahubali.webp';
+import bahubali from '../../assets/bahubali.webp';
 // import Talvar from '../../assets/talvar.webp';
 import avengers from '../../assets/avengers.jpg'
 
