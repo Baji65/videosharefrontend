@@ -4,7 +4,7 @@ import KGF from '../../assets/kgf.avif';
 import padmavati from '../../assets/padmavati.jpg';
 import bahubali from '../../assets/bahubali.webp';
 import darbar from '../../assets/darbar.webp';
-import avengers from '../../assets/avengers.jpg'
+import drishyam from '../../assets/drishyam2.webp'
 
 
 const HomeCarousel = () => {
@@ -23,7 +23,7 @@ const HomeCarousel = () => {
     KGF,
     padmavati,
    
-    avengers,
+    drishyam,
     darbar,
   ];
 
