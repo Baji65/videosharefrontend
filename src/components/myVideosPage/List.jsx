@@ -16,7 +16,7 @@ const List = ({ handleSelectedVideo }) => {
   useEffect(() => {
     setIsLoading(true);
     const fetchUserVideos = async (userId) => {
-      const myVideos = await axios.get(`${import.meta.env.VITE_NODE_API}api/v1/auth/userVideos/${userId}`);
+      const myVideos = await axios.get(`https://videoshareapp.onrender.com/api/v1/auth/userVideos/${userId}`);
       setUserVideos(myVideos.data.userVideos);
     };
     fetchUserVideos(auth.user._id);
