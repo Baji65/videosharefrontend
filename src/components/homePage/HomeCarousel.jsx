@@ -3,7 +3,7 @@ import { ChevronsLeft, ChevronsRight } from "react-feather";
 import KGF from '../../assets/kgf.avif';
 import padmavati from '../../assets/padmavati.jpg';
 import bahubali from '../../assets/bahubali.webp';
-// import Talvar from '../../assets/talvar.webp';
+import darbar from '../../assets/darbar.webp';
 import avengers from '../../assets/avengers.jpg'
 
 
@@ -24,7 +24,7 @@ const HomeCarousel = () => {
     padmavati,
    
     avengers,
-    // Talvar,
+    darbar,
   ];
 
   useEffect(() => {
