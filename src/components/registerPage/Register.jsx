@@ -32,7 +32,7 @@ const Register = () => {
       return
     }
     try {
-      const res = await axios.post(`${import.meta.env.VITE_NODE_API}api/v1/auth/register`, {
+      const res = await axios.post(`https://videoshareapp.onrender.com/api/v1/auth/register`, {
         name,
         email,
         profession,

@@ -8,7 +8,7 @@ export const postVideo = async (userId, videoData, onProgress) => {
             },
             onUploadProgress: onProgress,
           };
-        const response = await axios.post(`${import.meta.env.VITE_NODE_API}video/${userId}`, videoData, config)
+        const response = await axios.post(`https://videoshareapp.onrender.com/video/${userId}`, videoData, config)
         return response
     } catch (err) {
         return err.message
@@ -17,7 +17,7 @@ export const postVideo = async (userId, videoData, onProgress) => {
 
 export const searchByTitle = async (query) => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_NODE_API}video/search?q=${query}`)
+        const response = await axios.get(`https://videoshareapp.onrender.com/video/search?q=${query}`)
         return response.data.result
     } catch (err) {
         return err.message
@@ -26,7 +26,7 @@ export const searchByTitle = async (query) => {
 
 export const getById = async (videoId) => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_NODE_API}searchlist/video/${videoId}`)
+        const response = await axios.get(`https://videoshareapp.onrender.com/searchlist/video/${videoId}`)
         return response.data.result
     } catch (err) {
         return err.message
@@ -36,7 +36,7 @@ export const getById = async (videoId) => {
 export const updateVideo = async (userId, videoId, videoData) => {
     try {
         const response = await axios
-                            .put(`${import.meta.env.VITE_NODE_API}video/${userId}/${videoId}`, videoData)
+                            .put(`https://videoshareapp.onrender.com/video/${userId}/${videoId}`, videoData)
         return response.data.result
     } catch (err) {
         return err.message
@@ -45,7 +45,7 @@ export const updateVideo = async (userId, videoId, videoData) => {
 
 export const deleteVideo = async (userId, videoId) => {
     try {
-        const response = await axios.delete(`${import.meta.env.VITE_NODE_API}video/${userId}/${videoId}`)
+        const response = await axios.delete(`https://videoshareapp.onrender.com/video/${userId}/${videoId}`)
         return response.data.result
     } catch (err) {
         return err.message
@@ -54,7 +54,7 @@ export const deleteVideo = async (userId, videoId) => {
 
 export const getAllVideos = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_NODE_API}video`)
+        const response = await axios.get(`https://videoshareapp.onrender.com/video`)
         return response.data
     } catch (err) {
         return err.message
