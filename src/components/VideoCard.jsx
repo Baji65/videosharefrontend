@@ -5,22 +5,22 @@ import playIcon from '../assets/playIcon.png';
 const VideoCard = ( { card } ) => {
   const videoRef = useRef();
 
-  const isMouseEntered = () => {
-    if (videoRef.current && videoRef.current.paused) {
-      videoRef.current.play();
-    }
-  };
+  // const isMouseEntered = () => {
+  //   if (videoRef.current && videoRef.current.paused) {
+  //     videoRef.current.play();
+  //   }
+  // };
   
-  const isMouseLeft = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-  };
+  // const isMouseLeft = () => {
+  //   if (videoRef.current) {
+  //     videoRef.current.pause();
+  //   }
+  // };
 
   return (
       <div className="relative w-full h-auto max-md:flex"
-      onMouseEnter={isMouseEntered}
-      onMouseLeave={isMouseLeft}
+      // onMouseEnter={isMouseEntered}
+      // onMouseLeave={isMouseLeft}
       >
         <div className="relative">
           <video 
