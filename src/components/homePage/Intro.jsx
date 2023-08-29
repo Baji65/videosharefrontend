@@ -44,7 +44,7 @@ const Content = () => {
     <>
       <HomeCarousel />
       {!isLoading ? (
-        <div className={`video-content ${banner ? "relative translate-y-[-125px]" : ""}`}>
+        <div className={`video-content `}>
           <div className="btns">
             <div className="recent">Recent</div>
             <div className="view-all" onClick={handleViewButton}>
